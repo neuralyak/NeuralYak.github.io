@@ -1,0 +1,167 @@
+<!DOCTYPE html><html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NeuralYak - AI Chatbots for Coaches</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #0f0f0f;
+      color: #f0f0f0;
+      overflow-x: hidden;
+    }
+    header {
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      background: linear-gradient(135deg, #151515, #1a1a2e);
+    }
+    .hero-content {
+      z-index: 2;
+      text-align: center;
+    }
+    h1 {
+      font-size: 3em;
+      margin-bottom: 0.5em;
+    }
+    .lottie-container {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 1;
+      pointer-events: none;
+    }
+    section {
+      padding: 60px 20px;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+    .pricing-card {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid #333;
+      border-radius: 20px;
+      padding: 30px;
+      margin: 20px 0;
+      backdrop-filter: blur(10px);
+    }
+    .pricing-card h2 {
+      margin-top: 0;
+    }
+    .chat-button {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 12px 24px;
+      background: #03dac6;
+      color: #000;
+      border-radius: 30px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+    .chat-button:hover {
+      background: #00c4b4;
+    }
+    .floating-demo {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: #03dac6;
+      padding: 12px;
+      border-radius: 50%;
+      box-shadow: 0 0 10px #03dac6;
+      z-index: 999;
+      cursor: pointer;
+    }
+    .scroll-down {
+      position: absolute;
+      bottom: 40px;
+      font-size: 2em;
+      color: #ccc;
+      animation: bounce 2s infinite;
+    }
+    @keyframes bounce {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(10px); }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="hero-content">
+      <h1>Build Your AI Chatbot Empire</h1>
+      <p>NeuralYak builds smart, automated bots for modern coaches & creators.</p>
+      <a href="#pricing" class="chat-button">Explore Plans</a>
+    </div>
+    <div class="scroll-down"><i class="fas fa-chevron-down"></i></div>
+    <div class="lottie-container">
+      <lottie-player src="https://lottie.host/f58c3fcf-d5f1-4978-a89c-4c595be7c2ff/1LlKMkt7Y8.json" background="transparent" speed="1" style="width: 100%; height: 100%;" loop autoplay></lottie-player>
+    </div>
+  </header>  <section id="services">
+    <h2>Services We Offer</h2>
+    <ul>
+      <li><strong>Micro-Course Bots:</strong> Turn your content into interactive micro-courses that sell while you sleep.</li>
+      <li><strong>Email Integrations:</strong> Capture emails, automate nurturing, and grow your list.</li>
+      <li><strong>WhatsApp Bots:</strong> Convert leads, book calls, and handle FAQs directly on WhatsApp.</li>
+      <li><strong>Web Chatbots:</strong> Smart AI bots embedded into your website or landing page.</li>
+      <li><strong>App Integrations:</strong> Connect bots with Google Sheets, Zapier, Calendly, and more.</li>
+      <li><strong>Lead Routing:</strong> Send leads to your DMs, CRM, or team based on intent.</li>
+    </ul>
+  </section>  <section id="pricing">
+    <h2>Pricing Plans</h2><div class="pricing-card">
+  <h2>Starter Bot – $500 Setup</h2>
+  <p>Perfect for solopreneurs or early-stage coaches.</p>
+  <ul>
+    <li>1 WhatsApp or Website Bot</li>
+    <li>Handles basic FAQs & lead collection</li>
+    <li>24/7 automation + branded script</li>
+    <li>3 rounds of edits</li>
+    <li>One-time setup fee</li>
+    <li>Ongoing support available: $150/mo</li>
+  </ul>
+</div>
+
+<div class="pricing-card">
+  <h2>Pro Bot – $1000 Setup</h2>
+  <p>Ideal for busy coaches who want automation + lead nurturing.</p>
+  <ul>
+    <li>All Starter features</li>
+    <li>Smart lead routing + calendar integration</li>
+    <li>WhatsApp + Website bot included</li>
+    <li>Email follow-ups or Google Sheets export</li>
+    <li>Booking + CTA flows built-in</li>
+    <li>Ongoing support: $250–$500/mo</li>
+  </ul>
+</div>
+
+<div class="pricing-card">
+  <h2>Ultimate Bot – $2000 Setup</h2>
+  <p>Built for full-time creators and educators</p>
+  <ul>
+    <li>All Pro features</li>
+    <li>Custom onboarding quiz / mini-CRM</li>
+    <li>Email list builder & integrations</li>
+    <li>Zapier + Google Sheet Automations</li>
+    <li>Optional Course Bot addon available</li>
+    <li>Ongoing support: $500–$1000/mo</li>
+  </ul>
+</div>
+
+<div class="pricing-card">
+  <h2>Add-ons (Optional)</h2>
+  <ul>
+    <li>Course Bot: +$500 setup | $300–$500/mo</li>
+    <li>Micro-Course Bot: +$1000 setup</li>
+    <li>Extra Integrations: Starting at $150</li>
+  </ul>
+</div>
+
+  </section>  <a class="floating-demo" href="https://wa.me/918949830863" title="Chat Demo">
+    <i class="fas fa-comments"></i>
+  </a>  <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script></body>
+  </html>
