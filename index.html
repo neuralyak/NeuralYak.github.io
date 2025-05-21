@@ -1,0 +1,286 @@
+<!DOCTYPE html><html lang="en"><head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NeuralYak – AI Chatbots for Coaches</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }body {
+  font-family: 'Inter', sans-serif;
+  background: #0a0a0f;
+  color: #f4f4f5;
+  overflow-x: hidden;
+}
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 2rem;
+  background: linear-gradient(120deg, #0f0c29, #302b63, #24243e);
+}
+
+header h1 {
+  font-size: 2rem;
+  color: #fff;
+}
+
+.hero {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 0 2rem;
+  position: relative;
+  background: url('https://assets-global.website-files.com/5f6b779d69cfa88a3a8e56ef/607e29a602b39c63cf9810de_abstract-gradient-wave-1.svg') no-repeat center center/cover;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+}
+
+.hero h2 {
+  font-size: 3rem;
+  font-weight: 800;
+  background: linear-gradient(45deg, #00f0ff, #ff00c8);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.hero p {
+  margin-top: 1rem;
+  font-size: 1.2rem;
+  color: #ccc;
+}
+
+.cta-btn {
+  display: inline-block;
+  margin-top: 2rem;
+  padding: 1rem 2rem;
+  background: #00f0ff;
+  color: #000;
+  border-radius: 8px;
+  font-weight: 600;
+  transition: transform 0.3s;
+}
+
+.cta-btn:hover {
+  transform: scale(1.05);
+}
+
+section {
+  padding: 4rem 2rem;
+}
+
+.section-title {
+  font-size: 2rem;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.features {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+}
+
+.feature {
+  background: #13131a;
+  padding: 2rem;
+  border-radius: 12px;
+  text-align: center;
+  transition: 0.3s;
+}
+
+.feature:hover {
+  background: #1d1d2b;
+  transform: translateY(-5px);
+}
+
+.feature i {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: #00f0ff;
+}
+
+.pricing {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  max-width: 900px;
+  margin: auto;
+}
+
+.pricing-tier {
+  border: 2px solid #2e2e40;
+  border-radius: 12px;
+  padding: 2rem;
+  background: #111118;
+  position: relative;
+  transition: 0.3s;
+}
+
+.pricing-tier:hover {
+  background: #1e1e2f;
+}
+
+.popular {
+  border-color: #00f0ff;
+  box-shadow: 0 0 15px #00f0ff;
+}
+
+.pricing-tier h3 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.pricing-tier ul {
+  list-style: none;
+  margin-top: 1rem;
+}
+
+.pricing-tier ul li {
+  margin: 0.5rem 0;
+}
+
+.testimonials {
+  display: flex;
+  overflow-x: auto;
+  gap: 1rem;
+  scroll-snap-type: x mandatory;
+}
+
+.testimonial {
+  flex: 0 0 300px;
+  background: #161624;
+  border-radius: 12px;
+  padding: 1.5rem;
+  scroll-snap-align: start;
+}
+
+.testimonial p {
+  font-style: italic;
+  margin-bottom: 0.5rem;
+}
+
+footer {
+  background: #0a0a0f;
+  text-align: center;
+  padding: 2rem;
+  font-size: 0.9rem;
+  color: #888;
+}
+
+  </style>
+</head><body>
+  <header>
+    <h1>NeuralYak</h1>
+    <a href="https://wa.me/918949830863" class="cta-btn">Message on WhatsApp</a>
+  </header>  <section class="hero">
+    <div class="hero-content">
+      <h2>AI Chatbots Built for Coaches</h2>
+      <p>Automate your DMs, bookings & course sales while you sleep.</p>
+      <a class="cta-btn" href="#pricing">See Plans</a>
+    </div>
+  </section>  <section>
+    <h2 class="section-title">What We Offer</h2>
+    <div class="features">
+      <div class="feature">
+        <i class="fas fa-robot"></i>
+        <h4>Clone Bot</h4>
+        <p>Replicates your tone, answers DMs, and drives leads 24/7.</p>
+      </div>
+      <div class="feature">
+        <i class="fas fa-book"></i>
+        <h4>Course Bot</h4>
+        <p>Delivers personalized course recommendations + sales flows.</p>
+      </div>
+      <div class="feature">
+        <i class="fas fa-envelope"></i>
+        <h4>Email & WhatsApp Integration</h4>
+        <p>Seamlessly capture and nurture leads via email or chat.</p>
+      </div>
+      <div class="feature">
+        <i class="fas fa-infinity"></i>
+        <h4>24/7 Support</h4>
+        <p>Never lose a lead again — bots work even when you're offline.</p>
+      </div>
+    </div>
+  </section>  <section id="pricing">
+    <h2 class="section-title">Pricing</h2>
+    <div class="pricing">
+      <div class="pricing-tier">
+        <h3>Starter Bot – $500 Setup</h3>
+        <ul>
+          <li>1 WhatsApp or Website Bot</li>
+          <li>Handles basic FAQs & lead collection</li>
+          <li>3 rounds of edits</li>
+          <li>Ongoing support: $150/mo</li>
+        </ul>
+      </div><div class="pricing-tier popular">
+    <h3>Pro Bot – $1000 Setup (Most Popular)</h3>
+    <ul>
+      <li>All Starter features</li>
+      <li>Smart lead routing + calendar integration</li>
+      <li>WhatsApp + Website bot included</li>
+      <li>Email follow-ups or Google Sheets export</li>
+      <li>Booking + CTA flows</li>
+      <li>Ongoing support: $250–$500/mo</li>
+    </ul>
+  </div>
+
+  <div class="pricing-tier">
+    <h3>Ultimate Bot – $2000 Setup</h3>
+    <ul>
+      <li>All Pro features</li>
+      <li>Custom onboarding quiz / mini-CRM</li>
+      <li>Email list builder & integrations</li>
+      <li>Zapier + Google Sheet Automations</li>
+      <li>Optional Course Bot addon</li>
+      <li>Ongoing support: $500–$1000/mo</li>
+    </ul>
+  </div>
+</div>
+
+<div class="pricing-tier" style="margin-top: 2rem;">
+  <h3>Add-ons</h3>
+  <ul>
+    <li>Course Bot: +$500 setup | $300–$500/mo</li>
+    <li>Micro-Course Bot: +$1000 setup</li>
+    <li>Extra Integrations: Starting at $150</li>
+  </ul>
+</div>
+
+  </section>  <section>
+    <h2 class="section-title">Testimonials</h2>
+    <div class="testimonials">
+      <div class="testimonial">
+        <p>“NeuralYak saved me 15 hours a week — now I close clients in my sleep!”</p>
+        <strong>– Coach Priya</strong>
+      </div>
+      <div class="testimonial">
+        <p>“Their Course Bot converted 20% more students than my sales page.”</p>
+        <strong>– Marketing Mentor Alex</strong>
+      </div>
+    </div>
+  </section>  <footer>
+    &copy; 2025 NeuralYak. Built with intelligence.
+  </footer>
+</body></html>
