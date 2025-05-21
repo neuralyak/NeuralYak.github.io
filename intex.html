@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>NeuralYak - AI Chatbot Solutions for Coaches</title>
+
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet" />
+
+<!-- Lottie player -->
+<script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+
+<style>
+  /* Reset & base */
+  * {
+    box-sizing: border-box;
+  }
+  body {
+    margin: 0; 
+    font-family: 'Poppins', sans-serif; 
+    background: #0f111a; 
+    color: #eee; 
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+  }
+  a {
+    color: #00aaff;
+    text-decoration: none;
+  }
+  a:hover {
+    text-decoration: underline;
+  }
+  h1, h2, h3 {
+    font-weight: 600;
+    margin: 0 0 15px;
+  }
+  p, li {
+    font-weight: 300;
+    line-height: 1.5;
+  }
+  ul {
+    padding-left: 20px;
+  }
+  /* Container */
+  .container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+
+  /* Hero */
+  header {
+    position: relative;
+    height: 90vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    overflow: hidden;
+    background: linear-gradient(135deg, #010214 0%, #081c44 100%);
+  }
+  header .content {
+    z-index: 10;
+    max-width: 700px;
+  }
+  header h1 {
+    font-size: 3.5rem;
+    margin-bottom: 10px;
+    color: #00aaff;
+    text-shadow: 0 0 10px #00aaffaa;
+  }
+  header p {
+    font-size: 1.25rem;
+    margin-bottom: 30px;
+    color: #c0dfffcc;
+  }
+  header .btn {
+    background: #00aaff;
+    padding: 14px 40px;
+    font-weight: 600;
+    font-size: 1.1rem;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    color: #0f111a;
+    box-shadow: 0 0 15px #00aaffcc;
+    transition: background 0.3s ease;
+  }
+  header .btn:hover {
+    background: #008ecc;
+  }
+
+  /* Lottie wrapper */
+  .lottie-wrapper {
+    position: absolute;
+    bottom: 0;
+    right: 10%;
+    width: 350px;
+    opacity: 0.8;
+    pointer-events: none;
+  }
+
+  /* Parallax background bubbles */
+  .parallax-bg {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    pointer-events: none;
+    overflow: visible;
+  }
+  .bubble {
+    position: absolute;
+    border-radius: 50%;
+    background: radial-gradient(circle at center, #00aaffaa, transparent 70%);
+    filter: blur(20px);
+    animation: floatUp 20s linear infinite;
+  }
+  .bubble:nth-child(1) {
+    width: 150px; height: 150px;
+    left: 10%;
+    animation-delay: 0s;
+  }
+  .bubble:nth-child(2) {
+    width: 100px; height: 100px;
+    left: 30%;
+    animation-delay: 5s;
+  }
+  .bubble:nth-child(3) {
+    width: 200px; height: 200px;
+    left: 60%;
+    animation-delay: 10s;
+  }
+  .bubble:nth-child(4) {
+    width: 120px; height: 120px;
+    left: 80%;
+    animation-delay: 15s;
+  }
+  @keyframes floatUp {
+    0% { transform: translateY(120vh) scale(1);}
+    100% { transform: translateY(-30vh) scale(1.2);}
+  }
+
+  /* Section styling */
+  section {
+    padding: 60px 0;
+    max-width: 900px;
+    margin: 0 auto;
+  }
+  section h2 {
+    text-align: center;
+    color: #00aaff;
+    margin-bottom: 40px;
+  }
+
+  /* Pricing */
+  #pricing .cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 25px;
+    justify-content: center;
+  }
+  #pricing .card {
+    background: #111827;
+    border-radius: 15px;
+    padding: 30px 25px;
+    flex: 1 1 280px;
+    box-shadow: 0 0 20px #00aaff44;
+    position: relative;
+    color: #eee;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  #pricing .card.popular::before {
+    content: 'Most Popular';
+    position: absolute;
+    top: -12px;
+    right: 15px;
+    background: #00aaff;
+    color: #0f111a;
+    font-weight: 700;
+    font-size: 0.85rem;
+    padding: 5px 12px;
+    border-radius: 12px;
+    box-shadow: 0 0 10px #00aaffaa;
+  }
+  #pricing .card h3 {
+    margin-bottom: 15px;
+    color: #00aaff;
+  }
+  #pricing .card ul {
+    list-style: disc;
+    padding-left: 20px;
+    margin-bottom: 25px;
+  }
+  #pricing .card p {
+    font-weight: 600;
+    font-size: 1rem;
+    margin-top: auto;
+    color: #a3d9ff;
+  }
+
+  /* Services */
+  #services .service-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 25px;
+    justify-content: center;
+  }
+  #services .service {
+    background: #111827;
+    border-radius: 15px;
+    padding: 25px 20px;
+    max-width: 280px;
+    box-shadow: 0 0 20px #00aaff44;
+  }
+  #services .service h4 {
+    margin-bottom: 15px;
+    color: #00aaff;
+  }
+  #services .service p {
+    font-weight: 300;
+    line-height: 1.4;
+  }
+
+  /* FAQ */
+  #faq details {
+    background: #111827;
+    border-radius: 12px;
+    margin-bottom: 15px;
+    padding: 15px 20px;
+    box-shadow: 0 0 10px #00aaff44;
+    cursor: pointer;
+  }
+  #faq summary {
+    font-weight: 600;
+    color: #00aaff;
+    outline: none;
+  }
+  #faq details[open] summary::after {
+    content: '−';
+    float: right;
+  }
+  #faq summary::after {
+    content: '+';
+    float: right;
+  }
+  #faq p {
+    margin-top: 10px;
+    font-weight: 300;
+    color: #c0dfffcc;
+  }
+
+  /* Floating WhatsApp button */
+  #whatsapp-btn {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background: #25d366;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    box-shadow: 0 0 20px #25d366aa;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    z-index: 999;
+  }
+  #whatsapp-btn:hover {
+    background: #128c4a;
+  }
+  #whatsapp-btn svg {
+    fill: white;
+    width: 30px;
+    height: 30px;
+  }
+
+  /* Responsive */
+  @media (max-width: 900px) {
+    #pricing .cards,
+    #services .service-list {
+      flex-direction: column;
+      align-items: center;
+    }
+    header h1 {
+      font-size: 2.5rem;
+    }
+    header .lottie-wrapper {
+      width: 250px;
+      right: 5%;
+    }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="parallax-bg" aria-hidden="true">
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+  </div>
+
+  <div class="content container" role="banner">
+    <h1>NeuralYak AI Chatbots</h1>
+    <p>Automate your coaching business with personalized AI-powered chatbots and smart automations.</p>
+    <button class="btn" onclick="scrollToPricing()">See Pricing</button>
+  </div>
+
+  <div class="lottie-wrapper" aria-hidden="true">
+    <lottie-player
+      src="https://assets4.lottiefiles.com/packages/lf20_x62chJ.json"
+      background="transparent"
+      speed="1"
+      style="width: 350px; height: 350px;"
+      loop
+      autoplay>
+    </lottie-player>
+  </div>
+</header>
+
+<main class="container" role="main">
+  <section id="pricing" aria-label="Pricing plans">
+    <h2>Our Plans</h2>
+    <div class="cards">
+      <article class="card" tabindex="0">
+        <h3>Starter Bot – $500 Setup</h3>
+        <ul>
+          <li>1 WhatsApp or Website Bot</li>
+          <li>Handles basic FAQs & lead collection</li>
+          <li>24/7 automation + branded script</li>
+          <li>3 rounds of edits</li>
+          <li>One-time setup fee</li>
+        </ul>
+        <p>Ongoing support available: $150/mo</p>
+      </article>
+      <article class="card popular" tabindex="0">
+        <h3>Pro Bot – $1000 Setup</h3>
+        <ul>
+          <li>All Starter features</li>
+          <li>Smart lead routing + calendar integration</li>
+          <li>WhatsApp + Website bot included</li>
+          <li>Email follow-ups or Google Sheets export</li>
+          <li>Booking + CTA flows built-in</li>
+        </ul>
+        <p>Ongoing support: $250–$500/mo</p>
+      </article>
+      <article class="card" tabindex="0">
+        <h3>Ultimate Bot – $2000 Setup</h3>
+        <ul>
+          <li>All Pro features</li>
+          <li>Custom onboarding quiz / mini-CRM</li>
+          <li>Email list builder & integrations</li>
+          <li>Zapier + Google Sheet Automations</li>
+          <li>Optional Course Bot addon available</li>
+        </ul>
+        <p>Ongoing support: $500–$1000/mo</p>
+      </article>
+    </div>
+  </section>
+
+  <section id="services" aria-label="Our services">
+    <h2>What We Provide</h2>
+    <div class="service-list">
+      <article class="service" tabindex="0">
+        <h4>Micro-Course Bot</h4>
+        <p>Turn your coaching content into interactive micro-courses with quizzes and progress tracking. Perfect for engaging your audience deeply.</p>
+      </article>
+      <article class="service" tabindex="0">
+        <h4>Email Integration</h4>
+        <p>Seamlessly connect your chatbot with email platforms for automated follow-ups, nurturing, and list building.</p>
+      </article>
+      <article class="service" tabindex="0">
+        <h4>App & CRM Integrations</h4>
+        <p>We integrate with Google Sheets, Zapier, Calendly, and other tools to streamline your lead management and workflows.</p>
+      </article>
+      <article class="service" tabindex="0">
+        <h4>WhatsApp & Website Bots</h4>
+        <p>Engage your leads where they are with smart WhatsApp bots and website chatbots that handle FAQs, bookings, and sales.</p>
+      </article>
+      <article class="service" tabindex="0">
+        <h
