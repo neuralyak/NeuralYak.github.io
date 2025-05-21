@@ -1,0 +1,687 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>NeuralYak - AI Chatbots for Coaches & Creators</title>
+  <style>
+    /* Reset & base */
+    body, h1, h2, h3, p, ul, li, dl, dt, dd, a {
+      margin: 0; padding: 0; box-sizing: border-box;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      color: #222;
+    }
+    body {
+      line-height: 1.6;
+      background: #fff;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+    ul {
+      list-style: inside disc;
+    }
+
+    /* Container */
+    .container {
+      max-width: 960px;
+      margin: auto;
+      padding: 1rem;
+    }
+
+    /* Header / Hero */
+    header {
+      background: #007bff;
+      color: white;
+      text-align: center;
+      padding: 3rem 1rem 4rem;
+    }
+    header h1 {
+      font-size: 3rem;
+      margin-bottom: 0.5rem;
+    }
+    header p {
+      font-size: 1.25rem;
+      max-width: 600px;
+      margin: 0 auto 2rem;
+    }
+    .btn-whatsapp {
+      display: inline-block;
+      background: #25d366;
+      color: white;
+      padding: 0.75rem 1.5rem;
+      border-radius: 25px;
+      font-weight: 700;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+      transition: background 0.3s ease;
+    }
+    .btn-whatsapp:hover {
+      background: #1ebe5b;
+    }
+
+    /* Pricing */
+    section.pricing {
+      background: #f8f9fa;
+      padding: 3rem 1rem;
+    }
+    section.pricing h2 {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+    .pricing-grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1rem;
+    }
+    .plan {
+      background: white;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      padding: 1.5rem;
+      flex: 1 1 280px;
+      max-width: 300px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .plan h3 {
+      margin-bottom: 0.5rem;
+      color: #007bff;
+    }
+    .plan .price {
+      font-weight: 700;
+      font-size: 1.5rem;
+      margin-bottom: 0.5rem;
+    }
+    .plan ul {
+      margin-bottom: 1rem;
+      padding-left: 20px;
+    }
+    .btn-get-started {
+      background: #007bff;
+      color: white;
+      padding: 0.5rem 1rem;
+      border-radius: 5px;
+      font-weight: 600;
+      text-align: center;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+      transition: background 0.3s ease;
+    }
+    .btn-get-started:hover {
+      background: #0056b3;
+    }
+
+    /* Services */
+    section.services {
+      padding: 3rem 1rem;
+    }
+    section.services h2 {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+    .services-grid {
+      display: grid;
+      gap: 2rem;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      max-width: 960px;
+      margin: auto;
+    }
+    .service-card {
+      background: #e9f0fb;
+      padding: 1rem;
+      border-radius: 8px;
+      box-shadow: inset 0 0 6px #c3d1f2;
+      color: #003366;
+    }
+    .service-card h3 {
+      margin-bottom: 0.5rem;
+    }
+
+    /* Testimonials */
+    section.testimonials {
+      background: #f8f9fa;
+      padding: 3rem 1rem;
+    }
+    section.testimonials h2 {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+    .testimonial {
+      background: white;
+      padding: 1rem 1.5rem;
+      border-radius: 8px;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.1);
+      margin-bottom: 1.5rem;
+      max-width: 720px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .testimonial footer {
+      text-align: right;
+      font-style: italic;
+      margin-top: 0.5rem;
+      color: #555;
+    }
+
+    /* FAQ */
+    section.faq {
+      padding: 3rem 1rem;
+      max-width: 720px;
+      margin: auto;
+    }
+    section.faq h2 {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+    dl div {
+      margin-bottom: 1.5rem;
+    }
+    dt {
+      font-weight: 700;
+      margin-bottom: 0.3rem;
+    }
+    dd {
+      margin-left: 20px;
+      color: #333;
+    }
+
+    /* Footer */
+    footer {
+      background: #007bff;
+      color: white;
+      text-align: center;
+      padding: 2rem 1rem;
+      margin-top: 3rem;
+      font-size: 0.9rem;
+    }
+
+    /* Responsive */
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 2.25rem;
+      }
+      section.pricing .pricing-grid {
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>NeuralYak</h1>
+    <p>AI-powered chatbots for coaches, creators, and solopreneurs. Automate bookings, emails, and courses — all in one smart bot.</p>
+    <a
+      href="https://wa.me/918949830863"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="btn-whatsapp"
+      >Chat with us on WhatsApp</a
+    >
+  </header>
+
+  <section class="pricing">
+    <h2>Pricing Plans</h2>
+    <div class="pricing-grid">
+      <div class="plan">
+        <h3>Starter</h3>
+        <p class="price">$500</p>
+        <p>Basic chatbot setup with essential features.</p>
+        <ul>
+          <li>WhatsApp bot integration</li>
+          <li>Basic chatbot flow</li>
+          <li>Email support</li>
+        </ul>
+        <a
+          href="https://wa.me/918949830863?text=Hi!%20I'm%20interested%20in%20the%20Starter%20plan."
+          target="_blank"
+          rel="noopener noreferrer"
+          class="btn-get-started"
+          >Get Started</a
+        >
+      </div>
+
+      <div class="plan">
+        <h3>Pro</h3>
+        <p class="price">$1,000</p>
+        <p>Advanced chatbot with more integrations and analytics.</p>
+        <ul>
+          <li>All Starter features</li>
+          <li>Email integration</li>
+          <li>Booking &amp; calendar sync</li>
+          <li>Monthly analytics report</li>
+        </ul>
+        <a
+          href="https://wa.me/918949830863?text=Hi!%20I'm%20interested%20in%20the%20Pro%20plan."
+          target="_blank"
+          rel="noopener noreferrer"
+          class="btn-get-started"
+          >Get Started</a
+        >
+      </div>
+
+      <div class="plan">
+        <h3>Premium</h3>
+        <p class="price">$2,000</p>
+        <p>Full featured chatbot with Course Bot and premium support.</p>
+        <ul>
+          <li>All Pro features</li>
+          <li>Course Bot included</li>
+          <li>Priority support</li>
+          <li>Custom micro-course builder</li>
+        </ul>
+        <a
+          href="https://wa.me/918949830863?text=Hi!%20I'm%20interested%20in%20the%20Premium%20plan."
+          target="_blank"
+          rel="noopener noreferrer"
+          class="btn-get-started"
+          >Get Started</a
+        >
+      </div>
+    </div>
+  </section>
+
+  <section class="services container">
+    <h2>Our Services</h2>
+    <div class="services-grid">
+      <div class="service-card">
+        <h3>WhatsApp Chatbot</h3>
+        <p>Automate customer interactions, bookings, and FAQs directly on WhatsApp.</p>
+      </div>
+      <div class="service-card">
+        <h3>Course Bot</h3>
+        <p>Turn your content into interactive micro-courses with easy chatbot delivery.</p>
+      </div>
+      <div class="service-card">
+        <h3>Micro-Course Bot</h3>
+        <p>Advanced personalized micro-courses designed for deeper engagement and learning.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="testimonials">
+    <h2>What Our Clients Say</h2>
+    <div class="testimonial">
+      <p>"NeuralYak's chatbot saved me hours every week and boosted client bookings!"</p>
+      <footer>— Anjali K.</footer>
+    </div>
+    <div class="testimonial">
+      <p>"The Course Bot helped me create engaging mini-courses faster than ever."</p>
+      <footer>— Rohit M.</footer>
+    </div>
+  </section>
+
+  <section class="faq">
+    <h2>FAQs</h2>
+    <dl>
+      <div>
+        <dt>What platforms do your chatbots support?</dt>
+        <dd>
+          Our chatbots integrate primarily with WhatsApp and can connect to email, calendar apps, and web platforms as needed.
+        </dd>
+      </div>
+      <div>
+        <dt>How long does setup take?</dt>
+        <dd>Typical chatbot setup takes 3-5 business days depending on complexity and integrations.</dd>
+      </div>
+      <div>
+        <dt>Can I upgrade plans later?</dt>
+        <dd>Yes! You can start small and upgrade your plan anytime to add more features.</dd>
+      </div>
+    </dl>
+  </section>
+
+  <footer>
+    <p>© 2025 NeuralYak. All rights reserved.</p>
+  </footer>
+
+</body>
+</html><!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>NeuralYak - AI Chatbots for Coaches & Creators</title>
+  <style>
+    /* Reset & base */
+    body, h1, h2, h3, p, ul, li, dl, dt, dd, a {
+      margin: 0; padding: 0; box-sizing: border-box;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      color: #222;
+    }
+    body {
+      line-height: 1.6;
+      background: #fff;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+    ul {
+      list-style: inside disc;
+    }
+
+    /* Container */
+    .container {
+      max-width: 960px;
+      margin: auto;
+      padding: 1rem;
+    }
+
+    /* Header / Hero */
+    header {
+      background: #007bff;
+      color: white;
+      text-align: center;
+      padding: 3rem 1rem 4rem;
+    }
+    header h1 {
+      font-size: 3rem;
+      margin-bottom: 0.5rem;
+    }
+    header p {
+      font-size: 1.25rem;
+      max-width: 600px;
+      margin: 0 auto 2rem;
+    }
+    .btn-whatsapp {
+      display: inline-block;
+      background: #25d366;
+      color: white;
+      padding: 0.75rem 1.5rem;
+      border-radius: 25px;
+      font-weight: 700;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+      transition: background 0.3s ease;
+    }
+    .btn-whatsapp:hover {
+      background: #1ebe5b;
+    }
+
+    /* Pricing */
+    section.pricing {
+      background: #f8f9fa;
+      padding: 3rem 1rem;
+    }
+    section.pricing h2 {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+    .pricing-grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1rem;
+    }
+    .plan {
+      background: white;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      padding: 1.5rem;
+      flex: 1 1 280px;
+      max-width: 300px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .plan h3 {
+      margin-bottom: 0.5rem;
+      color: #007bff;
+    }
+    .plan .price {
+      font-weight: 700;
+      font-size: 1.5rem;
+      margin-bottom: 0.5rem;
+    }
+    .plan ul {
+      margin-bottom: 1rem;
+      padding-left: 20px;
+    }
+    .btn-get-started {
+      background: #007bff;
+      color: white;
+      padding: 0.5rem 1rem;
+      border-radius: 5px;
+      font-weight: 600;
+      text-align: center;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+      transition: background 0.3s ease;
+    }
+    .btn-get-started:hover {
+      background: #0056b3;
+    }
+
+    /* Services */
+    section.services {
+      padding: 3rem 1rem;
+    }
+    section.services h2 {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+    .services-grid {
+      display: grid;
+      gap: 2rem;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      max-width: 960px;
+      margin: auto;
+    }
+    .service-card {
+      background: #e9f0fb;
+      padding: 1rem;
+      border-radius: 8px;
+      box-shadow: inset 0 0 6px #c3d1f2;
+      color: #003366;
+    }
+    .service-card h3 {
+      margin-bottom: 0.5rem;
+    }
+
+    /* Testimonials */
+    section.testimonials {
+      background: #f8f9fa;
+      padding: 3rem 1rem;
+    }
+    section.testimonials h2 {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+    .testimonial {
+      background: white;
+      padding: 1rem 1.5rem;
+      border-radius: 8px;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.1);
+      margin-bottom: 1.5rem;
+      max-width: 720px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .testimonial footer {
+      text-align: right;
+      font-style: italic;
+      margin-top: 0.5rem;
+      color: #555;
+    }
+
+    /* FAQ */
+    section.faq {
+      padding: 3rem 1rem;
+      max-width: 720px;
+      margin: auto;
+    }
+    section.faq h2 {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+    dl div {
+      margin-bottom: 1.5rem;
+    }
+    dt {
+      font-weight: 700;
+      margin-bottom: 0.3rem;
+    }
+    dd {
+      margin-left: 20px;
+      color: #333;
+    }
+
+    /* Footer */
+    footer {
+      background: #007bff;
+      color: white;
+      text-align: center;
+      padding: 2rem 1rem;
+      margin-top: 3rem;
+      font-size: 0.9rem;
+    }
+
+    /* Responsive */
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 2.25rem;
+      }
+      section.pricing .pricing-grid {
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>NeuralYak</h1>
+    <p>AI-powered chatbots for coaches, creators, and solopreneurs. Automate bookings, emails, and courses — all in one smart bot.</p>
+    <a
+      href="https://wa.me/918949830863"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="btn-whatsapp"
+      >Chat with us on WhatsApp</a
+    >
+  </header>
+
+  <section class="pricing">
+    <h2>Pricing Plans</h2>
+    <div class="pricing-grid">
+      <div class="plan">
+        <h3>Starter</h3>
+        <p class="price">$500</p>
+        <p>Basic chatbot setup with essential features.</p>
+        <ul>
+          <li>WhatsApp bot integration</li>
+          <li>Basic chatbot flow</li>
+          <li>Email support</li>
+        </ul>
+        <a
+          href="https://wa.me/918949830863?text=Hi!%20I'm%20interested%20in%20the%20Starter%20plan."
+          target="_blank"
+          rel="noopener noreferrer"
+          class="btn-get-started"
+          >Get Started</a
+        >
+      </div>
+
+      <div class="plan">
+        <h3>Pro</h3>
+        <p class="price">$1,000</p>
+        <p>Advanced chatbot with more integrations and analytics.</p>
+        <ul>
+          <li>All Starter features</li>
+          <li>Email integration</li>
+          <li>Booking &amp; calendar sync</li>
+          <li>Monthly analytics report</li>
+        </ul>
+        <a
+          href="https://wa.me/918949830863?text=Hi!%20I'm%20interested%20in%20the%20Pro%20plan."
+          target="_blank"
+          rel="noopener noreferrer"
+          class="btn-get-started"
+          >Get Started</a
+        >
+      </div>
+
+      <div class="plan">
+        <h3>Premium</h3>
+        <p class="price">$2,000</p>
+        <p>Full featured chatbot with Course Bot and premium support.</p>
+        <ul>
+          <li>All Pro features</li>
+          <li>Course Bot included</li>
+          <li>Priority support</li>
+          <li>Custom micro-course builder</li>
+        </ul>
+        <a
+          href="https://wa.me/918949830863?text=Hi!%20I'm%20interested%20in%20the%20Premium%20plan."
+          target="_blank"
+          rel="noopener noreferrer"
+          class="btn-get-started"
+          >Get Started</a
+        >
+      </div>
+    </div>
+  </section>
+
+  <section class="services container">
+    <h2>Our Services</h2>
+    <div class="services-grid">
+      <div class="service-card">
+        <h3>WhatsApp Chatbot</h3>
+        <p>Automate customer interactions, bookings, and FAQs directly on WhatsApp.</p>
+      </div>
+      <div class="service-card">
+        <h3>Course Bot</h3>
+        <p>Turn your content into interactive micro-courses with easy chatbot delivery.</p>
+      </div>
+      <div class="service-card">
+        <h3>Micro-Course Bot</h3>
+        <p>Advanced personalized micro-courses designed for deeper engagement and learning.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="testimonials">
+    <h2>What Our Clients Say</h2>
+    <div class="testimonial">
+      <p>"NeuralYak's chatbot saved me hours every week and boosted client bookings!"</p>
+      <footer>— Anjali K.</footer>
+    </div>
+    <div class="testimonial">
+      <p>"The Course Bot helped me create engaging mini-courses faster than ever."</p>
+      <footer>— Rohit M.</footer>
+    </div>
+  </section>
+
+  <section class="faq">
+    <h2>FAQs</h2>
+    <dl>
+      <div>
+        <dt>What platforms do your chatbots support?</dt>
+        <dd>
+          Our chatbots integrate primarily with WhatsApp and can connect to email, calendar apps, and web platforms as needed.
+        </dd>
+      </div>
+      <div>
+        <dt>How long does setup take?</dt>
+        <dd>Typical chatbot setup takes 3-5 business days depending on complexity and integrations.</dd>
+      </div>
+      <div>
+        <dt>Can I upgrade plans later?</dt>
+        <dd>Yes! You can start small and upgrade your plan anytime to add more features.</dd>
+      </div>
+    </dl>
+  </section>
+
+  <footer>
+    <p>© 2025 NeuralYak. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>
