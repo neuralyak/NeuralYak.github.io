@@ -417,7 +417,44 @@
   }
 </style>
 </head>
-<body>
+<script>
+  const chatbox = document.getElementById('chatbox');
+  const chatInput = document.getElementById('chatInput');
+
+  function addMessage(sender, text) {
+    const msg = document.createElement('div');
+    msg.classList.add('msg', sender);
+    msg.textContent = text;
+    chatbox.appendChild(msg);
+    chatbox.scrollTop = chatbox.scrollHeight;
+  }
+
+  function botReply(userMsg) {
+    const responses = {
+      "hello": "Hey there! How can I help you today?",
+      "pricing": "We offer 3 chatbot plans: Starter ($500), Pro ($1000), Ultimate ($2000). Need help choosing?",
+      "course": "Our Micro-Course Bot helps you turn content into monetizable mini-courses.",
+      "email": "Yes, we integrate chatbots with your email sequences too!",
+      "whatsapp": "Absolutely! We can set up WhatsApp automation with your bot.",
+    };
+
+    const lower = userMsg.toLowerCase();
+    const reply = responses[lower] || "Thanks for your message! A team member will reply shortly.";
+    setTimeout(() => addMessage('bot', reply), 600);
+  }
+
+  function handleInput(e) {
+    if (e.key === 'Enter' && chatInput.value.trim() !== '') {
+      const msg = chatInput.value.trim();
+      addMessage('user', msg);
+      botReply(msg);
+      chatInput.value = '';
+    }
+  }
+
+  chatInput?.addEventListener('keydown', handleInput);
+</script>
+  <body>
 
 <header>
   <div class="blob blob1"></div>
