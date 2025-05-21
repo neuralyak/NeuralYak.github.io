@@ -169,6 +169,33 @@
       <p>Performance monitoring, updates, and technical assistance.</p>
     </details>
   </section><a href="https://wa.me/918949830863" class="whatsapp-float" target="_blank">WA</a>
-
+<!-- === START: Add this code block just before the closing </body> tag in your main index.html === --><!-- Import Lottie Files Library --><script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script><!-- Import Rellax.js for Parallax --><script src="https://cdn.jsdelivr.net/npm/rellax@1.12.1/rellax.min.js"></script><script>
+  document.addEventListener("DOMContentLoaded", function () {
+    var rellax = new Rellax('.rellax');
+  });
+</script><!-- Floating WhatsApp Button --><a href="https://wa.me/918949830863" class="whatsapp-float" target="_blank">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" style="width:50px; height:50px;">
+</a>
+<style>
+  .whatsapp-float {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 100;
+  }
+</style><!-- Lottie Hero Animation --><section style="text-align:center; padding: 80px 20px; background: #0c0c0c;">
+  <lottie-player src="https://assets3.lottiefiles.com/packages/lf20_puciaact.json"  background="transparent"  speed="1"  style="width: 300px; height: 300px; margin: auto;"  loop autoplay></lottie-player>
+  <h1 style="color: white; font-size: 2em; margin-top: 20px;">Smart Bots, Smarter Business</h1>
+</section><!-- Parallax Section (Add SVG Background and Text Layer) --><div class="rellax" data-rellax-speed="-2" style="height: 300px; background: linear-gradient(90deg,#121212,#1e1e1e); display:flex; align-items:center; justify-content:center;">
+  <h2 style="color:white; font-size: 2rem;">Experience Premium AI Automation</h2>
+</div><!-- Chatbot Preview Modal Button --><div style="text-align:center; margin: 60px auto;">
+  <button onclick="document.getElementById('chatModal').style.display='block'" style="padding: 12px 20px; font-size: 16px; border:none; background:#00ffb3; color:black; border-radius: 10px; cursor: pointer;">Preview Our Demo Bot</button>
+</div><!-- Modal Structure --><div id="chatModal" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.8); z-index:9999;">
+  <div style="width: 90%; max-width: 500px; margin: 50px auto; background:white; padding:20px; border-radius:12px; position:relative;">
+    <span onclick="document.getElementById('chatModal').style.display='none'" style="position:absolute; top:10px; right:20px; font-size:24px; cursor:pointer;">&times;</span>
+    <h3 style="margin-top:0;">NeuralYak Demo Bot</h3>
+    <iframe src="https://neuralyak-demo.netlify.app" width="100%" height="400" style="border:none;"></iframe>
+  </div>
+</div><!-- === END === -->
 </body>
             </html>
