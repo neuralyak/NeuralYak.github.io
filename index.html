@@ -1,0 +1,79 @@
+<!DOCTYPE html><html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NeuralYak – Smart AI Chatbots for Coaches</title>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;800&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Outfit', sans-serif;
+    }
+    body {
+      background: #0a0a0a;
+      color: #fff;
+      overflow-x: hidden;
+    }
+    .hero {
+      height: 100vh;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      text-align: center;
+      padding: 2rem;
+      background: #000;
+    }
+    #lottie-hero {
+      width: 320px;
+      height: 320px;
+      margin-bottom: 20px;
+    }
+    h1 {
+      font-size: 2.5rem;
+      font-weight: 800;
+    }
+    p {
+      margin-top: 1rem;
+      font-size: 1.2rem;
+      max-width: 600px;
+      line-height: 1.6;
+    }
+    .cta-button {
+      margin-top: 2rem;
+      background: #00ffc8;
+      color: #000;
+      padding: 0.75rem 1.5rem;
+      border: none;
+      border-radius: 8px;
+      font-weight: 600;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+    .cta-button:hover {
+      background: #00b98f;
+    }
+  </style>
+</head>
+<body>
+  <section class="hero">
+    <div id="lottie-hero"></div>
+    <h1>Launch Your Smart AI Chatbot Today</h1>
+    <p>We build personalized automation bots that grow your coaching business 24/7 — on autopilot.</p>
+    <a href="https://wa.me/918949830863" target="_blank">
+      <button class="cta-button">Book Your Bot Now</button>
+    </a>
+  </section>  <script src="https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.7.4/lottie.min.js"></script>  <script>
+    const anim = lottie.loadAnimation({
+      container: document.getElementById('lottie-hero'),
+      renderer: 'svg',
+      loop: true,
+      autoplay: true,
+      path: 'https://assets6.lottiefiles.com/packages/lf20_sSF6EG.json'
+    });
+  </script></body>
+</html>
