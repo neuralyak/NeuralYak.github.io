@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>NeuralYak - AI Chatbot Agency for Coaches</title>
+<style>
+  /* Reset & base */
+  * {
+    margin: 0; padding: 0; box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+  }
+  body {
+    background: #0f111a;
+    color: #e0e0e0;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+  }
+  a {
+    color: #6fffe9;
+    text-decoration: none;
+  }
+  a:hover {
+    text-decoration: underline;
+  }
+
+  /* Container */
+  .container {
+    max-width: 1100px;
+    margin: auto;
+    padding: 0 20px;
+  }
+
+  /* Header / Hero */
+  header {
+    height: 100vh;
+    background: linear-gradient(135deg, #161a2e 0%, #0f111a 100%);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    text-align: center;
+    overflow: hidden;
+  }
+  header h1 {
+    font-size: 3.8rem;
+    font-weight: 900;
+    letter-spacing: 0.07em;
+    margin-bottom: 15px;
+    color: #6fffe9;
+    text-shadow:
+      0 0 5px #6fffe9,
+      0 0 15px #6fffe9,
+      0 0 25px #6fffe9;
+  }
+  header p {
+    font-size: 1.3rem;
+    font-weight: 500;
+    max-width: 700px;
+    margin: 0 auto 40px auto;
+    line-height: 1.5;
+    color: #c6fff9dd;
+  }
+  .btn-primary {
+    background: #6fffe9;
+    color: #0f111a;
+    font-weight: 700;
+    padding: 15px 40px;
+    border-radius: 40px;
+    box-shadow:
+      0 0 15px #6fffe9,
+      0 0 40px #6fffe9;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: inline-block;
+    font-size: 1.1rem;
+  }
+  .btn-primary:hover {
+    background: #50ddd3;
+    box-shadow:
+      0 0 30px #50ddd3,
+      0 0 50px #50ddd3;
+  }
+
+  /* Floating Blob Animation */
+  @keyframes float {
+    0%, 100% {
+      transform: translateY(0) translateX(0);
+    }
+    50% {
+      transform: translateY(-20px) translateX(15px);
+    }
+  }
+  .blob {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(50px);
+    opacity: 0.3;
+    animation: float 6s ease-in-out infinite;
+  }
+  .blob1 {
+    width: 350px;
+    height: 350px;
+    background: #6fffe9;
+    top: 10%;
+    left: -10%;
+    animation-delay: 0s;
+  }
+  .blob2 {
+    width: 250px;
+    height: 250px;
+    background: #3bd6ce;
+    bottom: 5%;
+    right: -8%;
+    animation-delay: 3s;
+  }
+
+  /* Parallax section styling */
+  section {
+    padding: 70px 20px;
+    position: relative;
+  }
+  section:nth-child(even) {
+    background: #121626;
+  }
+  h2.section-title {
+    font-size: 2.5rem;
+    font-weight: 800;
+    text-align: center;
+    margin-bottom: 40px;
+    color: #6fffe9;
+    text-shadow: 0 0 8px #6fffe9;
+  }
+
+  /* Pricing Cards */
+  .pricing-cards {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+  }
+  .card {
+    background: #1a1f37;
+    padding: 30px 25px;
+    border-radius: 15px;
+    box-shadow:
+      0 4px 15px rgba(111, 255, 233, 0.3);
+    flex: 1 1 280px;
+    max-width: 320px;
+    color: #c6fff9;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+    position: relative;
+  }
+  .card:hover {
+    transform: translateY(-10px);
+    box-shadow:
+      0 10px 30px #6fffe9;
+  }
+  .card.popular {
+    border: 3px solid #3bd6ce;
+  }
+  .card .title {
+    font-size: 1.9rem;
+    font-weight: 700;
+    margin-bottom: 15px;
+  }
+  .card .price {
+    font-size: 1.8rem;
+    font-weight: 900;
+    margin-bottom: 20px;
+    color: #50ddd3;
+  }
+  .card ul {
+    list-style: none;
+    margin-bottom: 25px;
+    line-height: 1.5;
+    font-size: 1rem;
+  }
+  .card ul li {
+    margin-bottom: 10px;
+    padding-left: 18px;
+    position: relative;
+  }
+  .card ul li::before {
+    content: '✔';
+    position: absolute;
+    left: 0;
+    color: #50ddd3;
+  }
+  .card .cta-btn {
+    background: #6fffe9;
+    color: #0f111a;
+    border-radius: 30px;
+    padding: 14px 0;
+    font-weight: 700;
+    font-size: 1.1rem;
+    text-align: center;
+    user-select: none;
+    transition: background-color 0.3s ease;
+  }
+  .card .cta-btn:hover {
+    background: #50ddd3;
+  }
+  .badge {
+    position: absolute;
+    top: -12px;
+    right: -12px;
+    background: #3bd6ce;
+    color: #0f111a;
+    font-weight: 700;
+    padding: 6px 14px;
+    border-radius: 30px;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    box-shadow: 0 0 12px #3bd6ce;
+  }
+
+  /* Services grid */
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(280px,1fr));
+    gap: 30px;
+    max-width: 900px;
+    margin: 0 auto;
+  }
+  .service-card {
+    background: #1a1f37;
+    border-radius: 15px;
+    padding: 25px;
+    box-shadow: 0 4px 20px #3bd6ce;
+    color: #c6fff9;
+    transition: transform 0.3s ease;
+    cursor: default;
+  }
+  .service-card:hover {
+    transform: translateY(-8px);
+  }
+  .service-card h3 {
+    margin-bottom: 15px;
+    color: #6fffe9;
+    font-weight: 700;
+    font-size: 1.5rem;
+  }
+  .service-card p {
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+
+  /* FAQ */
+  .faq {
+    max-width: 700px;
+    margin: 0 auto;
+    color: #c6fff9;
+  }
+  .faq-item {
+    background: #121626;
+    margin-bottom: 15px;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 3px 10px #3bd6ce88;
+  }
+  .faq-question {
+    padding: 18px 20px;
+    cursor: pointer;
+    font-weight: 700;
+    font-size: 1.1rem;
+    position: relative;
+    user-select: none;
+  }
+  .faq-question::after {
+    content: '+';
+    position: absolute;
+    right: 20px;
+    font-size: 1.5rem;
+    transition: transform 0.3s ease;
+  }
+  .faq-question.active::after {
+    content: '-';
+    transform: rotate(180deg);
+  }
+  .faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    padding: 0 20px;
+    font-weight: 400;
+    font-size: 1rem;
+    line-height: 1.5;
+    transition: max-height 0.4s ease;
+  }
+  .faq-answer.open {
+    padding: 15px 20px 20px;
+    max-height: 500px;
+  }
+
+  /* Chat demo floating widget */
+  #chat-demo {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 360px;
+    max-width: 90vw;
+    height: 480px;
+    background: #1a1f37;
+    border-radius: 15px;
+    box-shadow: 0 8px 30px rgba(111,255,233,0.6);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    font-size: 14px;
+    z-index: 9999;
+    user-select: none;
+  }
+  #chat-header {
+    background: #50ddd3;
+    color: #0f111a;
+    font-weight: 800;
+    padding: 15px;
+    font-size: 1.1rem;
+    text-align: center;
+  }
+  #chat-messages {
+    flex: 1;
+    background: #121626;
+    padding: 15px;
+    overflow-y: auto;
+  }
+  .chat-msg {
+    margin-bottom: 12px;
+    line-height: 1.3;
+    border-radius: 12px;
+    padding: 10px 14px;
+    max-width: 80%;
+    clear: both;
+  }
+  .chat-msg.bot {
+    background: #3bd6ce;
+    color: #0f111a;
+    float: left;
+  }
+  .chat-msg.user {
+    background: #50ddd3;
+    color: #0f111a;
+    float: right;
+  }
+  #chat-input {
+    border-top: 1px solid #3bd6ce;
+    display: flex;
+  }
+  #chat-input input {
+    flex: 1;
+    padding: 12px 15px;
+    border: none;
+    background: #161a2e;
+    color: #c6fff9;
+    font-size: 1rem;
+    border-radius: 0 0 0 15px;
+  }
+  #chat-input button {
+    background: #6fffe9;
+    border: none;
+    color: #0f111a;
+    font-weight: 700;
+    padding: 0 20px;
+    cursor: pointer;
+    border-radius: 0 0 15px 0;
+    transition: background-color 0.3s ease;
+  }
+  #chat-input button:hover {
+    background: #50ddd3;
+  }
+
+  /* Contact floating buttons */
+  .contact-btns {
+    position: fixed;
+    bottom: 90px;
+    right: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    z-index: 10000;
+  }
+  .contact-btn {
+    background: #3bd6ce;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #0f111a;
+    font-size: 24px;
+    box-shadow: 0 0 12px #3bd6ce;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  .contact-btn:hover {
+    background: #50ddd3;
+  }
+
+  /* Responsive */
+  @media (max-width: 900px) {
+    .pricing-cards {
+      flex-direction: column;
+      align-items: center;
+    }
+    #chat-demo {
+      width: 95vw;
+      height: 400px;
+      bottom: 80px;
+      right: 2.5vw;
+    }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="blob blob1"></div>
+  <div class="blob blob2"></div>
+  <h1>NeuralYak</h1>
+  <p>Your AI Chatbot Agency for Coaches, Creators & Educators — Automate, Engage & Scale Faster</p>
+  <a href="#pricing" class="btn-primary">See Pricing Plans</a>
+</header>
+
+<section id="pricing" class="container">
+  <h2 class="section-title">Pricing Plans</h2>
+  <div class="pricing-cards">
+    <article class="card">
+      <div class="title">Starter Bot</div>
+      <div class="price">$500 Setup</div>
+      <ul>
+        <li>Perfect for solopreneurs or early-stage coaches.</li>
+        <li>1 WhatsApp or Website Bot</li>
+        <li>Handles basic FAQs & lead collection</li>
+        <li>24/7 automation + branded script</li>
+        <li>3 rounds of edits</li>
+        <li>One-time setup fee</li>
+        <li>Ongoing support available: $150/mo</li>
+      </ul>
+      <div class="cta-btn" onclick="alert('Contact us on WhatsApp to get started with Starter Bot!')">Get Starter Bot</div>
+    </article>
+
+    <article class="card popular">
+      <div class="badge">Most Popular</div>
+      <div class="title">Pro Bot</div>
+      <div class="price">$1000 Setup</div>
+      <ul>
+        <li>Ideal for busy coaches who want automation + lead nurturing.</li>
+        <li>All Starter features</li>
+        <li>Smart lead routing + calendar integration</li>
+        <li>WhatsApp + Website bot included</li>
+        <li>Email follow-ups or Google Sheets export</li>
+        <li>Booking + CTA flows built-in</li>
+        <li>Ongoing support: $250–$500/mo</li>
+      </ul>
+      <div class="cta-btn" onclick="alert('Contact us on WhatsApp to get started with Pro Bot!')">Get Pro Bot</div>
+    </article>
+
+    <article class="card">
+      <div class="title">Ultimate Bot</div>
+      <div class="price">$2000 Setup</div>
+      <ul>
+        <li>Built for full-time creators and educators</li>
+        <li>All Pro features</li>
+        <li>Custom onboarding quiz / mini-CRM</li>
+        <li>Email list builder & integrations</li>
+        <li>Zapier + Google Sheet Automations</li>
+        <li>Optional Course Bot addon available</li>
+        <li>Ongoing support: $500–$1000/mo</li>
+      </ul>
+      <div class="cta-btn" onclick="alert('Contact us on WhatsApp to get started with Ultimate Bot!')">Get Ultimate Bot</div>
+    </article>
+  </div>
+</section>
+
+<section id="services">
+  <h2 class="section-title">Our Services</h2>
+  <div class="services-grid container">
+    <article class="service-card">
+      <h3>Micro-Course Bot</h3>
+      <p>Turn your course content into an interactive chatbot micro-course. Deliver bite-sized lessons, quizzes, and automate follow-ups for better learner engagement.</p>
+    </article>
+    <article class="service-card">
+      <h3>Email Integration</h3>
+      <p>Connect your bots with email marketing platforms like Mailchimp or ConvertKit. Automate personalized email sequences triggered by chatbot interactions.</p>
+    </article>
+    <article class="service-card">
+      <h3>App & CRM Integrations</h3>
+      <p>Integrate with tools like Google Sheets, Zapier, Calendly, and custom CRMs to streamline lead management, booking, and workflow automation.</p>
+    </article>
+    <article class="service-card">
+      <h3>WhatsApp + Website Bots</h3>
+      <p>Multi-channel automation on WhatsApp and your website to capture leads, answer FAQs instantly, book calls, and nurture your audience around the clock.</p>
+    </article>
+    <article class="service-card">
+      <h3>24/7 Support & Maintenance</h3>
+      <p>We provide ongoing updates, optimizations, and support so your bots always perform flawlessly and scale as your business grows.</p>
+    </article>
+  </div>
+</section>
+
+<section id="faq" class="container">
+  <h2 class="section-title">Frequently Asked Questions</h2>
+
+  <div class="faq">
+    <div class="faq-item">
+      <div class="faq-question">How long does it take to set up a bot?</div>
+      <div class="faq-answer">Most Starter Bots are delivered within 5 business days. Pro and Ultimate Bots take 10-15 days depending on customizations.</div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question">Can I upgrade my plan later?</div>
+      <div class="faq-answer">Yes! You can seamlessly upgrade from Starter to Pro or Ultimate plans anytime as your coaching business grows.</div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question">Do you offer custom chatbot flows?</div>
+      <div class="faq-answer">Absolutely. We tailor chatbot conversations and automations specific to your audience and business needs.</div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question">What ongoing support do you provide?</div>
+      <div class="faq-answer">We offer monthly maintenance plans including script edits, platform updates,
