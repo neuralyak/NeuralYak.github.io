@@ -1,0 +1,237 @@
+<!DOCTYPE html><html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NeuralYak – AI Bots for Coaches</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    /* Core Styles */
+    body {
+      margin: 0;
+      font-family: 'Orbitron', sans-serif;
+      background: #0c0c0e;
+      color: #fff;
+      overflow-x: hidden;
+    }
+    section {
+      padding: 60px 20px;
+      max-width: 1200px;
+      margin: auto;
+    }
+    .hero {
+      height: 100vh;
+      background: radial-gradient(ellipse at center, #101022 0%, #07070d 100%);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      position: relative;
+    }
+    .hero h1 {
+      font-size: 3rem;
+      color: #00ffe0;
+      text-shadow: 0 0 10px #00ffe0;
+    }
+    .hero p {
+      font-size: 1.2rem;
+      max-width: 600px;
+      margin: 20px auto;
+    }
+    .cta-btn {
+      margin-top: 20px;
+      padding: 15px 30px;
+      background: #00ffe0;
+      color: #0c0c0e;
+      border: none;
+      border-radius: 30px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: transform 0.3s;
+    }
+    .cta-btn:hover {
+      transform: scale(1.05);
+    }/* Floating Buttons */
+.floating-btns {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  z-index: 999;
+}
+.floating-btns a {
+  background: #00ffe0;
+  color: #000;
+  padding: 12px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 10px #00ffe0;
+  transition: transform 0.3s;
+}
+.floating-btns a:hover {
+  transform: scale(1.1);
+}
+
+/* Feature Carousel */
+.carousel {
+  display: flex;
+  overflow-x: auto;
+  gap: 20px;
+  scroll-snap-type: x mandatory;
+  padding-bottom: 20px;
+}
+.carousel::-webkit-scrollbar {
+  display: none;
+}
+.card {
+  flex: 0 0 300px;
+  background: #15151d;
+  border-radius: 15px;
+  padding: 20px;
+  scroll-snap-align: start;
+  box-shadow: 0 0 10px #00ffe0;
+  transition: transform 0.3s;
+}
+.card:hover {
+  transform: translateY(-5px);
+}
+.card h3 {
+  margin-top: 0;
+  color: #00ffe0;
+}
+
+/* Pricing */
+.pricing {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+.pricing-card {
+  flex: 1;
+  min-width: 280px;
+  background: #1a1a25;
+  padding: 30px;
+  border-radius: 20px;
+  box-shadow: 0 0 15px #00ffe0;
+  position: relative;
+}
+.pricing-card h4 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+  color: #00ffe0;
+}
+.badge {
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  background: #00ffe0;
+  color: #000;
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-weight: bold;
+  font-size: 0.8rem;
+}
+.pricing-card ul {
+  list-style: none;
+  padding: 0;
+}
+.pricing-card li {
+  margin: 10px 0;
+  line-height: 1.5;
+}
+
+/* FAQ */
+.faq {
+  max-width: 800px;
+  margin: auto;
+}
+.faq-item {
+  background: #1c1c28;
+  margin-bottom: 10px;
+  padding: 15px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+.faq-answer {
+  display: none;
+  margin-top: 10px;
+}
+
+  </style>
+</head>
+<body>
+  <div class="hero">
+    <h1>NeuralYak</h1>
+    <p>We build smart AI bots for coaches that sell, support, and schedule — 24/7.</p>
+    <button class="cta-btn">Get Your Bot Now</button>
+  </div>  <section>
+    <h2>Our Smart Services</h2>
+    <div class="carousel">
+      <div class="card">
+        <h3>Clone Bot</h3>
+        <p>It talks like you, sells like you, and books calls while you sleep.</p>
+      </div>
+      <div class="card">
+        <h3>Micro-Course Bot</h3>
+        <p>Turns your content into lead-gen micro courses in minutes.</p>
+      </div>
+      <div class="card">
+        <h3>Email + WhatsApp Integration</h3>
+        <p>Capture leads, follow-up automatically, and never miss a sale.</p>
+      </div>
+      <div class="card">
+        <h3>24/7 Support Bot</h3>
+        <p>Handles FAQs and keeps your DMs clean. You just focus on coaching.</p>
+      </div>
+    </div>
+  </section>  <section>
+    <h2>Pricing Plans</h2>
+    <div class="pricing">
+      <div class="pricing-card">
+        <h4>Starter – $500</h4>
+        <ul>
+          <li>Clone Bot</li>
+          <li>Basic Conversation Flows</li>
+          <li>Delivery in 3 Days</li>
+        </ul>
+      </div>
+      <div class="pricing-card">
+        <span class="badge">Most Popular</span>
+        <h4>Pro – $1000</h4>
+        <ul>
+          <li>Advanced Clone Bot</li>
+          <li>Email + WhatsApp Integration</li>
+          <li>Scheduling + CRM Support</li>
+        </ul>
+      </div>
+      <div class="pricing-card">
+        <h4>Elite – $2000</h4>
+        <ul>
+          <li>Everything in Pro</li>
+          <li>Micro-Course Bot</li>
+          <li>Custom Branding & Premium AI</li>
+        </ul>
+      </div>
+    </div>
+  </section>  <section class="faq">
+    <h2>FAQs</h2>
+    <div class="faq-item" onclick="this.querySelector('.faq-answer').style.display='block'">
+      <strong>How long does setup take?</strong>
+      <div class="faq-answer">Usually 3–5 days, depending on your plan.</div>
+    </div>
+    <div class="faq-item" onclick="this.querySelector('.faq-answer').style.display='block'">
+      <strong>Do I need to provide content?</strong>
+      <div class="faq-answer">Just some existing videos or copy. We'll turn it into an AI-ready flow.</div>
+    </div>
+  </section>  <div class="floating-btns">
+    <a href="https://wa.me/918949830863" target="_blank"><i class="fab fa-whatsapp"></i></a>
+    <a href="https://instagram.com/yourprofile" target="_blank"><i class="fab fa-instagram"></i></a>
+    <a href="https://calendly.com/yourbooking" target="_blank"><i class="fa fa-calendar"></i></a>
+  </div></body>
+  </html>
