@@ -1,0 +1,174 @@
+<!DOCTYPE html><html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NeuralYak - AI Chatbots for Coaches</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Inter', sans-serif;
+    }
+    body {
+      background: #0e0e0e;
+      color: #fff;
+      overflow-x: hidden;
+    }
+    header {
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+      text-align: center;
+      padding: 2rem;
+    }
+    header h1 {
+      font-size: 3rem;
+      font-weight: 700;
+      z-index: 1;
+    }
+    .blob {
+      position: absolute;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(255, 255, 255, 0.1), transparent);
+      animation: float 10s ease-in-out infinite;
+    }
+    .blob1 { width: 300px; height: 300px; top: 10%; left: 5%; }
+    .blob2 { width: 400px; height: 400px; bottom: 5%; right: 10%; }
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-30px); }
+    }
+    section {
+      padding: 4rem 2rem;
+      max-width: 960px;
+      margin: auto;
+    }
+    .pricing {
+      display: grid;
+      gap: 2rem;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    }
+    .card {
+      background: #1e1e1e;
+      padding: 2rem;
+      border-radius: 1rem;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 10px 25px rgba(255, 255, 255, 0.1);
+    }
+    .faq-item {
+      margin-bottom: 1.5rem;
+      background: #1a1a1a;
+      border-radius: 0.5rem;
+    }
+    .faq-item summary {
+      padding: 1rem;
+      cursor: pointer;
+      font-weight: 600;
+    }
+    .faq-item p {
+      padding: 0 1rem 1rem 1rem;
+    }
+    .whatsapp-float {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: #25d366;
+      color: #fff;
+      border-radius: 50%;
+      width: 60px;
+      height: 60px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+      animation: pulse 2s infinite;
+    }
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.1); }
+      100% { transform: scale(1); }
+    }
+    .cta {
+      margin-top: 2rem;
+      font-size: 1.2rem;
+      background: #fff;
+      color: #0e0e0e;
+      padding: 1rem 2rem;
+      border-radius: 2rem;
+      text-decoration: none;
+      display: inline-block;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="blob blob1"></div>
+    <div class="blob blob2"></div>
+    <h1>Build Smart AI Chatbots with NeuralYak</h1>
+  </header>  <section>
+    <h2>Our Chatbot Plans</h2>
+    <div class="pricing">
+      <div class="card">
+        <h3>Starter Bot – $500 Setup</h3>
+        <ul>
+          <li>1 WhatsApp or Website Bot</li>
+          <li>Handles basic FAQs & lead collection</li>
+          <li>24/7 automation + branded script</li>
+          <li>3 rounds of edits</li>
+          <li>Ongoing support: $150/mo</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Pro Bot – $1000 Setup</h3>
+        <ul>
+          <li>All Starter features</li>
+          <li>Smart lead routing + calendar integration</li>
+          <li>WhatsApp + Website bot included</li>
+          <li>Email follow-ups or Google Sheets export</li>
+          <li>Ongoing support: $250–$500/mo</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Ultimate Bot – $2000 Setup</h3>
+        <ul>
+          <li>All Pro features</li>
+          <li>Custom onboarding quiz / mini-CRM</li>
+          <li>Email list builder & integrations</li>
+          <li>Zapier + Google Sheet Automations</li>
+          <li>Ongoing support: $500–$1000/mo</li>
+        </ul>
+      </div>
+    </div>
+  </section>  <section>
+    <h2>Add-ons</h2>
+    <ul>
+      <li>Course Bot: +$500 setup | $300–$500/mo</li>
+      <li>Micro-Course Bot: +$1000 setup</li>
+      <li>Extra Integrations: Starting at $150</li>
+    </ul>
+  </section>  <section>
+    <h2>FAQs</h2>
+    <details class="faq-item">
+      <summary>What platforms do your bots support?</summary>
+      <p>WhatsApp, Websites, Google Sheets, Email integrations, and more.</p>
+    </details>
+    <details class="faq-item">
+      <summary>Can I customize the bot completely?</summary>
+      <p>Yes, all bots are fully customized to your brand and needs.</p>
+    </details>
+    <details class="faq-item">
+      <summary>What’s included in the support plan?</summary>
+      <p>Performance monitoring, updates, and technical assistance.</p>
+    </details>
+  </section><a href="https://wa.me/918949830863" class="whatsapp-float" target="_blank">WA</a>
+
+</body>
+            </html>
