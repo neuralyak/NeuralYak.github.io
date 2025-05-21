@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>NeuralYak</title>
+
+  <!-- Lottie animation library -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.7.14/lottie.min.js"></script>
+
+  <style>
+    /* Basic reset & style */
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #0a0a0a;
+      color: #eee;
+      overflow-x: hidden;
+    }
+    header {
+      text-align: center;
+      padding: 3rem 1rem 5rem;
+      background: linear-gradient(135deg, #1f1f1f, #121212);
+      position: relative;
+      z-index: 1;
+    }
+    h1 {
+      font-size: 3rem;
+      margin: 0;
+      color: #00ffe7;
+      text-shadow: 0 0 10px #00ffe7;
+    }
+
+    /* Lottie animation container style */
+    #lottie-animation {
+      width: 300px;
+      height: 300px;
+      margin: 0 auto 2rem;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Lottie Animation container -->
+  <div id="lottie-animation"></div>
+
+  <!-- Hero Section -->
+  <header>
+    <h1>Welcome to NeuralYak</h1>
+    <p>Your AI chatbot agency for coaches and creators.</p>
+  </header>
+
+  <!-- Rest of your site content goes here -->
+
+  <script>
+    // Initialize Lottie animation
+    lottie.loadAnimation({
+      container: document.getElementById('lottie-animation'),
+      renderer: 'svg',
+      loop: true,
+      autoplay: true,
+      // A neat clean chatbot-related animation from LottieFiles
+      path: 'https://assets9.lottiefiles.com/packages/lf20_iwmd6pyr.json'
+    });
+  </script>
+</body>
+</html>
