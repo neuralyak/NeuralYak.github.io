@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>NeuralYak - Automate Coaching</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;800&display=swap" rel="stylesheet">
+  <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Outfit', sans-serif;
+      background: linear-gradient(135deg, #0c0f1a, #1a1d2e);
+      color: #f5f5f5;
+      overflow-x: hidden;
+    }
+    h1, h2, h3 { font-weight: 800; }
+    a { color: #6ef; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .container { max-width: 1200px; margin: auto; padding: 2rem 1.5rem; }
+    header {
+      display: flex; flex-direction: column; align-items: center; text-align: center;
+      padding: 4rem 1rem; position: relative; z-index: 2;
+    }
+    header h1 { font-size: 3rem; margin-bottom: 1rem; }
+    header p { font-size: 1.2rem; max-width: 600px; color: #ccc; }
+    lottie-player.hero-animation {
+      width: 300px; height: 300px; margin-top: 2rem;
+    }
+    header::before {
+      content: ""; position: absolute; top: -80px; left: 50%; transform: translateX(-50%);
+      width: 600px; height: 600px; background: radial-gradient(circle, rgba(58,121,255,0.3), transparent 70%);
+      filter: blur(80px); z-index: -1;
+      animation: pulse 5s ease-in-out infinite;
+    }
+    @keyframes pulse {
+      0%, 100% { opacity: 0.3; }
+      50% { opacity: 0.6; }
+    }
+    .section {
+      margin-top: 5rem;
+    }
+    .carousel {
+      overflow: hidden; position: relative;
+    }
+    .carousel-track {
+      display: flex; transition: transform 0.6s ease; will-change: transform;
+    }
+    .carousel-item {
+      min-width: 100%; padding: 2rem; box-sizing: border-box;
+    }
+    .carousel-nav {
+      text-align: center; margin-top: 1rem;
+    }
+    .carousel-nav button {
+      background: #222; color: #6ef; border: none; padding: 0.6rem 1.2rem;
+      font-weight: 600; border-radius: 6px; cursor: pointer;
+      transition: background 0.3s ease;
+    }
+    .carousel-nav button:hover {
+      background: #6ef; color: #000;
+    }
+    .pricing-card, .card {
+      background: #1e2235; border-radius: 12px;
+      padding: 2rem; text-align: center;
+      box-shadow: 0 0 20px rgba(100, 150, 255, 0.15);
+    }
+    .pricing-card h3 { font-size: 1.5rem; margin-bottom: 1rem; }
+    .pricing-price { font-size: 2.2rem; color: #6ef; font-weight: 800; margin: 1rem 0; }
+    .pricing-features { list-style: none; padding: 0; margin: 1rem 0; color: #aaa; }
+    .pricing-features li { margin-bottom: 0.5rem; }
+    .pricing-card button {
+      background: #6ef; color: #000; border: none; padding: 0.8rem 2rem;
+      font-weight: 700; border-radius: 25px; cursor: pointer;
+    }
+    .section-title {
+      text-align: center; font-size: 2rem; margin-bottom: 2rem;
+    }
+    .faq-question {
+      font-weight: 600; font-size: 1.1rem; margin-bottom: 0.5rem;
+      cursor: pointer; position: relative; color: #6ef;
+    }
+    .faq-answer {
+      max-height: 0; overflow: hidden; transition: max-height 0.3s ease;
+      font-size: 0.95rem; color: #ccc; margin-bottom: 1rem;
+    }
+    .faq-question.open + .faq-answer {
+      max-height: 200px;
+    }
+    .micro-section {
+      background: radial-gradient(circle at top, #2d2d69 0%, #0c0f1a 80%);
+      padding: 4rem 2rem; border-radius: 16px; text-align: center;
+      color: #f0f0f0; margin-top: 5rem;
+      box-shadow: 0 0 30px rgba(100, 150, 255, 0.1);
+    }
+    .micro-section h2 {
+      font-size: 2.4rem; margin-bottom: 1rem;
+    }
+    .micro-section p {
+      max-width: 700px; margin: 0 auto 2rem;
+    }
+    .whatsapp-btn {
+      background: #25D366; color: #fff;
+      border: none; padding: 1rem 2rem; font-size: 1.2rem;
+      font-weight: 700; border-radius: 30px;
+      text-decoration: none; display: inline-block;
+    }
+    @media (min-width: 768px) {
+      .carousel-item { min-width: 80%; margin: 0 10%; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Automate Your Coaching Business</h1>
+    <p>24/7 AI bots for leads, nurturing & course delivery — fully customized for YOU.</p>
+    <lottie-player class="hero-animation" src="https://assets.lottiefiles.com/packages/lf20_example.json" background="transparent" speed="1" loop autoplay></lottie-player>
+  </header>
+  <div class="container">
+    <section class="section">
+      <h2 class="section-title">Pricing Plans</h2>
+      <div class="carousel" id="pricing-carousel">
+        <div class="carousel-track">
+          <div class="carousel-item">
+            <div class="pricing-card">
+              <h3>Starter Bot</h3>
+              <div class="pricing-price">$500</div>
+              <ul class="pricing-features">
+                <li>1 WhatsApp or Website Bot</li>
+                <li>Handles basic FAQs & lead collection</li>
+                <li>24/7 automation + branded script</li>
+                <li>3 rounds of edits</li>
+                <li>One-time setup fee</li>
+                <li>Ongoing support available: $150/mo</li>
+              </ul>
+              <button>Get Started</button>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <div class="pricing-card">
+              <h3>Pro Bot</h3>
+              <div class="pricing-price">$1000</div>
+              <ul class="pricing-features">
+                <li>All Starter features</li>
+                <li>Smart lead routing + calendar integration</li>
+                <li>WhatsApp + Website bot included</li>
+                <li>Email follow-ups or Google Sheets export</li>
+                <li>Booking + CTA flows built-in</li>
+                <li>Ongoing support: $250–$500/mo</li>
+              </ul>
+              <button>Get Started</button>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <div class="pricing-card">
+              <h3>Ultimate Bot</h3>
+              <div class="pricing-price">$2000</div>
+              <ul class="pricing-features">
+                <li>All Pro features</li>
+                <li>Custom onboarding quiz / mini-CRM</li>
+                <li>Email list builder & integrations</li>
+                <li>Zapier + Google Sheet Automations</li>
+                <li>Optional Course Bot addon available</li>
+                <li>Ongoing support: $500–$1000/mo</li>
+              </ul>
+              <button>Get Started</button>
+            </div>
+          </div>
+        </1
