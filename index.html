@@ -1,0 +1,152 @@
+<!DOCTYPE html><html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NeuralYak - AI Bots for Coaches</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;700;900&display=swap" rel="stylesheet">
+  <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/scrollreveal"></script>
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Outfit', sans-serif;
+      background: radial-gradient(#101018, #050509);
+      color: #f0f0f0;
+      overflow-x: hidden;
+    }
+    header {
+      text-align: center;
+      padding: 4rem 2rem;
+      position: relative;
+    }
+    header::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: url('https://assets-global.website-files.com/64b6a8707e9c1a31f8c349d3/64b6a8707e9c1a31f8c34a22_background-circuit.svg') center/cover no-repeat;
+      opacity: 0.07;
+      z-index: 0;
+    }
+    header h1 {
+      font-size: 3rem;
+      z-index: 1;
+      position: relative;
+    }
+    header p {
+      font-size: 1.3rem;
+      max-width: 700px;
+      margin: 1rem auto;
+      color: #aaa;
+      z-index: 1;
+      position: relative;
+    }
+    lottie-player {
+      width: 320px;
+      height: 320px;
+      margin: 2rem auto;
+      z-index: 1;
+      position: relative;
+    }
+    .btn-primary {
+      background: #6e64f7;
+      color: white;
+      padding: 0.8rem 2rem;
+      border: none;
+      border-radius: 30px;
+      font-weight: 700;
+      font-size: 1rem;
+      cursor: pointer;
+      box-shadow: 0 0 15px #6e64f7aa;
+      transition: background 0.3s ease;
+    }
+    .btn-primary:hover {
+      background: #4b43d1;
+    }
+    section {
+      padding: 5rem 2rem;
+      max-width: 1100px;
+      margin: auto;
+    }
+    section h2 {
+      font-size: 2.4rem;
+      margin-bottom: 2rem;
+      text-align: center;
+    }
+    .service {
+      background: #151524;
+      border-radius: 20px;
+      padding: 2rem;
+      margin: 1.5rem 0;
+      box-shadow: 0 0 15px #2a2a72cc;
+      transition: transform 0.3s ease;
+    }
+    .service:hover {
+      transform: translateY(-5px);
+    }
+    .service h3 {
+      font-size: 1.6rem;
+      color: #6e64f7;
+    }
+    .service p {
+      color: #bbb;
+    }
+    .whatsapp {
+      display: flex;
+      justify-content: center;
+      margin-top: 3rem;
+    }
+    .whatsapp a {
+      background: #25D366;
+      color: white;
+      padding: 0.8rem 2rem;
+      border-radius: 30px;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 1.1rem;
+    }
+    .whatsapp a:hover {
+      background: #1ebc59;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Automate Your Coaching with AI Bots</h1>
+    <p>From lead capture to course delivery — scale your coaching with intelligent automation.</p>
+    <lottie-player src="https://assets1.lottiefiles.com/packages/lf20_3rwasyjy.json" background="transparent" speed="1" loop autoplay></lottie-player>
+    <button class="btn-primary" onclick="window.open('https://wa.me/918949830863','_blank')">Talk to Us Now</button>
+  </header>  <section id="services">
+    <h2>What We Build for You</h2>
+    <div class="service" data-sr>
+      <h3>Lead Gen Chatbot</h3>
+      <p>Capture leads 24/7 on your site, WhatsApp, or social DMs with a smart, personalized chatbot.</p>
+    </div>
+    <div class="service" data-sr>
+      <h3>Course Automation Bot</h3>
+      <p>Deliver full-length coaching programs automatically — via email, WhatsApp, or your LMS.</p>
+    </div>
+    <div class="service" data-sr>
+      <h3>Micro-Course Bot</h3>
+      <p>Launch mini-courses that feel like conversations — teach, quiz, and track users in chat.</p>
+    </div>
+    <div class="service" data-sr>
+      <h3>Call Booking Assistant</h3>
+      <p>Auto-book your strategy calls and follow-up through WhatsApp with smart reminders.</p>
+    </div>
+  </section>  <div class="whatsapp">
+    <a href="https://wa.me/918949830863" target="_blank">Talk to Us Now on WhatsApp</a>
+  </div>  <script>
+    ScrollReveal().reveal('[data-sr]', {
+      distance: '50px',
+      duration: 1200,
+      easing: 'ease-out',
+      origin: 'bottom',
+      interval: 200
+    });
+  </script></body>
+             </html>
