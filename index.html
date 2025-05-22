@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>NeuralYak - AI Chatbots for Coaches</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet" />
+  <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+  <style>
+    body {
+      margin: 0; 
+      font-family: 'Inter', sans-serif;
+      background: #0f0f0f;
+      color: white;
+      overflow-x: hidden;
+    }
+    header {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      background: linear-gradient(145deg, #101010, #1f1f1f);
+      padding: 0 20px;
+      position: relative;
+    }
+    header h1 {
+      font-weight: 800;
+      font-size: 3rem;
+      margin-bottom: 1rem;
+      z-index: 10;
+    }
+    header p {
+      font-weight: 400;
+      font-size: 1.3rem;
+      max-width: 600px;
+      margin-bottom: 3rem;
+      z-index: 10;
+    }
+    lottie-player {
+      width: 320px;
+      height: 320px;
+      position: absolute;
+      top: 50px;
+      right: 20px;
+      pointer-events: none;
+      z-index: 1;
+    }
+    section {
+      max-width: 900px;
+      margin: 60px auto;
+      padding: 0 20px;
+    }
+    h2 {
+      font-weight: 700;
+      font-size: 2rem;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+    .pricing {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 24px;
+    }
+    .card {
+      background: #1a1a1a;
+      padding: 20px;
+      border-radius: 16px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+      transition: transform 0.3s ease;
+    }
+    .card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 16px 30px rgba(0,245,160,0.5);
+    }
+    .card h3 {
+      color: #00f5a0;
+      margin-bottom: 12px;
+    }
+    .card ul {
+      padding-left: 18px;
+      list-style-type: disc;
+      line-height: 1.5;
+    }
+    .features ul {
+      list-style: none;
+      padding: 0;
+      line-height: 1.7;
+      font-size: 1.1rem;
+    }
+    .features ul li::before {
+      content: "✓ ";
+      color: #00f5a0;
+    }
+    #faq p {
+      margin-bottom: 15px;
+      font-size: 1.05rem;
+    }
+    #faq strong {
+      color: #00f5a0;
+    }
+    footer {
+      text-align: center;
+      padding: 40px 20px;
+      background: #151515;
+      font-size: 0.9rem;
+      color: #777;
+    }
+    .floating-btn {
+      position: fixed;
+      bottom: 25px;
+      right: 25px;
+      background: #00f5a0;
+      color: #000;
+      padding: 14px 20px;
+      font-weight: 700;
+      border-radius: 30px;
+      text-decoration: none;
+      box-shadow: 0 8px 25px rgba(0,245,160,0.7);
+      z-index: 9999;
+      transition: background 0.3s ease;
+    }
+    .floating-btn:hover {
+      background: #00c885;
+    }
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 2.2rem;
+      }
+      header p {
+        font-size: 1rem;
+      }
+      lottie-player {
+        position: static;
+        width: 250px;
+        height: 250px;
+        margin: 0 auto 30px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Automate Your Coaching Business</h1>
+    <p>Get 24/7 lead generation, nurturing, and course automation bots. Built custom for YOU.</p>
+    <lottie-player 
+      src="https://assets1.lottiefiles.com/packages/lf20_5ngs2ksb.json" 
+      background="transparent"  
+      speed="1"  
+      loop  
+      autoplay>
+    </lottie-player>
+  </header>
+
+  <section id="pricing">
+    <h2>Pricing</h2>
+    <div class="pricing">
+      <div class="card">
+        <h3>Starter Bot – $500</h3>
+        <ul>
+          <li>1 WhatsApp or Website Bot</li>
+          <li>Handles FAQs & lead collection</li>
+          <li>Branded script, 3 rounds of edits</li>
+          <li>One-time setup</li>
+          <li>Support available: $150/mo</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Pro Bot – $1000</h3>
+        <ul>
+          <li>Starter features + smart lead routing</li>
+          <li>WhatsApp + Web bot</li>
+          <li>Email follow-ups or Sheets export</li>
+          <li>Booking flows included</li>
+          <li>Support: $250–$500/mo</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Ultimate Bot – $2000</h3>
+        <ul>
+          <li>Pro features + onboarding quiz</li>
+          <li>Mini CRM + email integrations</li>
+          <li>Zapier & Sheets automation</li>
+          <li>CourseBot add-on option</li>
+          <li>Support: $500–$1000/mo</li>
+        </ul>
+      </div>
+    </div>
+    <div style="margin-top: 20px; text-align: center;">
+      <strong>Add-ons:</strong> CourseBot (+$500), MicroCourse Bot (+$1000), Extra integrations (from $150)
+    </div>
+  </section>
+
+  <section class="features">
+    <h2>Key Features</h2>
+    <ul>
+      <li>Fully branded & customized for you</li>
+      <li>Smart lead qualification and routing</li>
+      <li>Automated email and WhatsApp replies</li>
+      <li>Integrations with Google Sheets, Calendly, Zapier</li>
+      <li>CourseBot + MicroCourseBot available</li>
+    </ul>
+  </section>
+
+  <section id="faq">
+    <h2>FAQs</h2>
+    <p><strong>Q:</strong> Can I connect the bot to my email list?<br /><strong>A:</strong> Yes! We support ConvertKit, MailerLite, and more.</p>
+    <p><strong>Q:</strong> Can I customize the chatbot script?<br /><strong>A:</strong> Absolutely. We offer 3 rounds of edits to get it perfect.</p>
+    <p><strong>Q:</strong> What about updates or ongoing support?<br /><strong>A:</strong> We offer monthly retainers based on your tier.</p>
+  </section>
+
+  <footer>
+    <p>Built by NeuralYak | AI Chatbots for Coaches</p>
+  </footer>
+
+  <a href="https://wa.me/918949830863" target="_blank" class="floating-btn">Chat on WhatsApp</a>
+</body>
+  </html>
