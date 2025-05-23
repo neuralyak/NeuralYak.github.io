@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NeuralYak – AI Automation</title>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Outfit', sans-serif;
+      background: #0d0d0d;
+      color: #fff;
+    }
+    #vanta-bg {
+      position: absolute;
+      width: 100%;
+      height: 100vh;
+      top: 0;
+      left: 0;
+      z-index: 0;
+    }
+    header {
+      position: relative;
+      z-index: 1;
+      padding: 4rem 2rem;
+      text-align: center;
+    }
+    .brand { font-size: 1.2rem; color: #00ffe0; font-weight: 600; margin-bottom: 1rem; }
+    .headline { font-size: 2rem; font-weight: 800; margin-bottom: 1rem; }
+    .subtext { font-size: 1rem; font-weight: 300; max-width: 90%; margin: 0 auto 2rem; }
+    h2 {
+      color: #00ffe0;
+      text-align: center;
+      margin: 3rem 0 1rem;
+    }
+    .swiper {
+      padding: 1rem 0;
+    }
+    .swiper-slide {
+      background: #1a1a1a;
+      border-radius: 12px;
+      padding: 1.5rem;
+      width: 280px;
+      box-shadow: 0 0 10px rgba(0,255,255,0.05);
+    }
+    .swiper-slide h3 {
+      margin-top: 0;
+      color: #00ffe0;
+    }
+    .swiper-slide ul {
+      padding-left: 1rem;
+    }
+    .desc {
+      margin-top: 0.5rem;
+      font-size: 0.85rem;
+      color: #aaa;
+    }
+    .whatsapp-btn {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      width: 50px;
+      height: 50px;
+      background: #25D366;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      box-shadow: 0 0 10px rgba(0,0,0,0.3);
+      z-index: 1000;
+    }
+    .whatsapp-btn img {
+      width: 24px;
+      height: 24px;
+    }
+    .swiper-pagination-bullets {
+      text-align: center;
+      margin-top: 0.5rem;
+    }
+    #lottie-hero {
+      width: 240px;
+      margin: 2rem auto;
+    }
+  </style>
+</head>
+<body>
+  <div id="vanta-bg"></div>
+  <header>
+    <div class="brand">NeuralYak</div>
+    <div class="headline">AI Automation for Coaches</div>
+    <div class="subtext">Capture leads. Qualify clients. Deliver results. All on autopilot.</div>
+    <div id="lottie-hero"></div>
+  </header>
+
+  <h2>Pricing Tiers</h2>
+  <div class="swiper pricing-swiper">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide">
+        <h3>Launch Bot</h3>
+        <p>$699 setup + $199/month</p>
+        <ul>
+          <li>Lead Capture Bot</li>
+          <li>Google Sheets/CSV export</li>
+          <li>Basic WhatsApp automation</li>
+          <li>3-day onboarding</li>
+        </ul>
+        <div class="desc">Perfect for early-stage coaches starting automation.</div>
+      </div>
+      <div class="swiper-slide">
+        <h3>Growth Bot</h3>
+        <p>$1499 setup + $399/month</p>
+        <ul>
+          <li>Includes Micro-Course Bot</li>
+          <li>CRM Integration (Notion, Sheets)</li>
+          <li>Analytics Dashboard</li>
+          <li>WhatsApp Replies</li>
+        </ul>
+        <div class="desc">Great for scaling coaches who need consistent lead handling.</div>
+      </div>
+      <div class="swiper-slide">
+        <h3>Scale Bot</h3>
+        <p>$2499 setup + $699/month</p>
+        <ul>
+          <li>All Growth features</li>
+          <li>Multi-step bots & API integration</li>
+          <li>VIP Support + AI Copy Assistant</li>
+          <li>Unlimited campaigns</li>
+        </ul>
+        <div class="desc">Designed for high-volume coaches and agencies ready to dominate.</div>
+      </div>
+    </div>
+    <div class="swiper-pagination"></div>
+  </div>
+
+  <h2>What We Offer</h2>
+  <div class="swiper service-swiper">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide">
+        <h3>Micro-Course Bot</h3>
+        <p>Deliver drip-fed learning content via WhatsApp. Great for nurturing cold leads into warm ones.</p>
+      </div>
+      <div class="swiper-slide">
+        <h3>Lead Qualification</h3>
+        <p>Auto-score and segment incoming leads. Send only qualified prospects to your CRM.</p>
+      </div>
+      <div class="swiper-slide">
+        <h3>CRM & WhatsApp Integration</h3>
+        <p>Seamlessly syncs with Notion, Google Sheets, and Pipedrive. Smart responses included.</p>
+      </div>
+      <div class="swiper-slide">
+        <h3>Landing Pages</h3>
+        <p>Build high-converting, Lottie-enhanced landing pages customized for your niche.</p>
+      </div>
+    </div>
+    <div class="swiper-pagination"></div>
+  </div>
+
+  <h2>What Clients Say</h2>
+  <div class="swiper testimonial-swiper">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide">
+        “NeuralYak helped me automate 80% of my lead tasks. It’s a game changer!”<br><br><em>- Jamie, Fitness Coach</em>
+      </div>
+      <div class="swiper-slide">
+        “The Micro-Course Bot turned my passive list into active buyers in 2 weeks.”<br><br><em>- Sarah, Business Mentor</em>
+      </div>
+      <div class="swiper-slide">
+        “Superb support and brilliant automation. Highly recommended!”<br><br><em>- David, Career Coach</em>
+      </div>
+    </div>
+    <div class="swiper-pagination"></div>
+  </div>
+
+  <h2>FAQs</h2>
+  <div class="swiper faq-swiper">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide"><strong>What’s included in setup?</strong><br>Bot setup, CRM linking, onboarding, and walkthrough in 3 days.</div>
+      <div class="swiper-slide"><strong>Can I upgrade later?</strong><br>Yes. You can upgrade tiers anytime with prorated billing.</div>
+      <div class="swiper-slide"><strong>Do I need tech skills?</strong><br>No. NeuralYak is fully managed. Just focus on coaching.</div>
+    </div>
+    <div class="swiper-pagination"></div>
+  </div>
+
+  <a href="https://wa.me/918949830863?text=Hi%20NeuralYak%2C%20I'm%20interested%20in%20your%20AI%20services." class="whatsapp-btn" target="_blank">
+    <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp">
+  </a>
+
+  <script src="https://cdn.jsdelivr.net/npm/three@0.124.0/build/three.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.dots.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.7.4/lottie.min.js"></script>
+  <script>
+    VANTA.DOTS({
+      el: "#vanta-bg",
+      mouseControls: true,
+      touchControls: true,
+      color: 0x00ffe0,
+      backgroundColor: 0x0d0d0d
+    });
+
+    lottie.loadAnimation({
+      container: document.getElementById("lottie-hero"),
+      renderer: "svg",
+      loop: true,
+      autoplay: true,
+      path: "https://assets1.lottiefiles.com/private_files/lf30_kqshlcsx.json"
+    });
+
+    const swipers = document.querySelectorAll('.swiper');
+    swipers.forEach(swiperEl => {
+      new Swiper(swiperEl, {
+        slidesPerView: 1.1,
+        spaceBetween: 16,
+        loop: true,
+        pagination: {
+          el: swiperEl.querySelector('.swiper-pagination'),
+          clickable: true
+        }
+      });
+    });
+  </script>
+</body>
+  </html>
